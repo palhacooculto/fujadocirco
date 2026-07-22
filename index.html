@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palhaço Oculto | Fuja do Circo</title>
+    <link rel="icon" type="image/webp" href="img/favicon.webp">
+    <meta name="description" content="Descubra como construir negócios digitais lucrativos no YouTube sem aparecer. Estratégia completa do zero até a monetização." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="preload" as="image" href="img/render-final.webp" />
+    <link rel="stylesheet" href="style.css?v=1.0.8" />
+
+    <!-- ===== Version Cleanup: limpa dados antigos do navegador ===== -->
+    <script>
+        (function() {
+            var SITE_VERSION = '1.0.8';
+            if (localStorage.getItem('__site_version') !== SITE_VERSION) {
+                // Limpar localStorage (exceto a própria flag)
+                localStorage.clear();
+                // Limpar sessionStorage
+                sessionStorage.clear();
+                // Limpar todos os cookies do domínio
+                document.cookie.split(';').forEach(function(c) {
+                    var name = c.split('=')[0].trim();
+                    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+                });
+                // Marcar versão atual
+                localStorage.setItem('__site_version', SITE_VERSION);
+                // Recarregar a página limpa (uma única vez)
+                window.location.reload(true);
+            }
+        })();
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1626871931864884');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
+/></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+    <!-- ===== ANNOUNCEMENT BAR ===== -->
+    <div class="announcement-bar">
+        NÃO SEJA O BOBO DA CORTE, FUJA DO CIRCO
+    </div>
+
+    <!-- ===== Floating Particles ===== -->
+    <div class="particles" id="particles"></div>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-glow hero-glow--left"></div>
+        <div class="hero-glow hero-glow--right"></div>
+
+        <div class="hero-inner">
+            <!-- Left Content -->
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="hero-badge-icon">▶</span>
+                    <span>14 ANOS DE YOUTUBE CONDENSADOS</span>
+                </div>
+
+                <h1 class="hero-headline">
+                    Aprenda TUDO que<br> você precisa saber<br> pra CRESCER um canal<br>
+                    <span class="highlight-gold">NO YOUTUBE DO ZERO!</span>
+                </h1>
+
+                <p class="hero-subtext">
+                    Descubra como eu fiz na prática pra construir negócios digitais que me rendem dinheiro todo mês na internet.
+                </p>
+
+                <!-- Mobile-only video placed exactly above the button -->
+                <div class="mobile-only" style="width: 100%; flex-direction: column; margin-bottom: 30px;">
+                    <div class="hero-video-block">
+                        <h2 class="video-section-title" style="margin-bottom: 20px;">
+                            <span class="video-title-icon">▶</span> ASSISTA O VÍDEO ABAIXO
+                        </h2>
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube-nocookie.com/embed/E-x-spnysEo?vq=hd1080" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#cta-final" class="cta-btn" id="cta-hero">
+          <span>QUERO COMEÇAR AGORA</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </a>
+
+                <div class="hero-trust">
+                    <div class="trust-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+            </svg>
+                        <span>Sem aparecer</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+            </svg>
+                        <span>Sem experiência</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+            </svg>
+                        <span>Trabalhando em casa</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual desktop-only">
+                <div class="hero-ring"></div>
+                <img src="img/render-final.webp" alt="Especialista em YouTube" class="hero-person" />
+
+            </div>
+        </div>
+
+        <!-- Video Block (Desktop Only) -->
+        <div class="desktop-only" style="width: 100%; flex-direction: column;">
+            <div class="hero-video-block">
+                <h2 class="video-section-title">
+                    <span class="video-title-icon">▶</span> ASSISTA O VÍDEO ABAIXO
+                </h2>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube-nocookie.com/embed/E-x-spnysEo?vq=hd1080" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ===== BENEFITS SECTION ===== -->
+    <section class="benefits" id="beneficios">
+        <div class="wave-divider">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,0 C480,120 960,0 1440,80 L1440,120 L0,120 Z" fill="#ffffff" />
+      </svg>
+        </div>
+        <div class="benefits-inner">
+
+            <!-- Second Block based on Reference -->
+            <div class="benefits-card reference-card reveal-on-scroll">
+                <div class="reference-left">
+                    <img src="img/print.webp" alt="Analytics Dashboard" class="tablet-img" />
+                </div>
+                <div class="reference-right">
+                    <h2 class="reference-title">
+                        Começando do Zero<br> até a <span class="monetization-badge">monetização</span>
+                    </h2>
+                    <ul class="reference-list">
+                        <li>
+                            <span class="ref-icon">➜</span>
+                            <span>Ganhar dinheiro em Dólar</span>
+                        </li>
+                        <li>
+                            <span class="ref-icon">➜</span>
+                            <span>Trabalhando em casa</span>
+                        </li>
+                        <li>
+                            <span class="ref-icon">➜</span>
+                            <span>Tempo livre para aproveitar</span>
+                        </li>
+                        <li>
+                            <span class="ref-icon">➜</span>
+                            <span>Monetização garantida</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PILLARS SECTION ===== -->
+    <section class="pillars" id="pilares">
+        <div class="section-label">
+            <span class="label-icon">➜</span>
+            <span>METODOLOGIA VALIDADA</span>
+        </div>
+
+        <h2 class="pillars-title">
+            O passo a passo para criar um <span class="red-box">CANAL de SUCESSO</span> no YOUTUBE
+        </h2>
+        <p class="pillars-subtitle">Sem enrolação, tudo que realmente importa, vou te ensinar na prática o passo a passo, clique por clique do que você deve fazer pra conseguir resultados iguais aos meus.</p>
+
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <div class="pillar-icon pillar-icon--red">📈</div>
+                <h3>O que funciona no YouTube?</h3>
+                <p>Você vai aprender o que está por trás do conteúdo que viraliza no YouTube.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-icon pillar-icon--red">💻</div>
+                <h3>Canal duradouro que gera renda</h3>
+                <p>Você vai aprender a criar um canal que dure ANOS e não algo temporário.</p>
+            </div>
+            <div class="pillar-card pillar-card--bonus">
+                <div class="bonus-badge">BÔNUS</div>
+                <div class="pillar-icon pillar-icon--bonus">🤫</div>
+                <h3>Segredo dos Youtubers</h3>
+                <p>Uma aula ESPECIAL que te mostra uma estratégia pouco falada usada por todos Youtubers de muito sucesso.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOCIAL PROOF SECTION ===== -->
+    <section class="proof" id="resultados">
+        <h2 class="proof-title">
+            Veja o resultado REAL de <span class="red-box">VÍDEOS</span> que aplicam meu método!
+        </h2>
+        <p class="proof-subtitle">Resultados reais em diferentes nichos de quem colocou em prática!</p>
+
+        <div class="proof-carousel" id="proofCarousel">
+            <button class="carousel-arrow carousel-arrow--left" id="carouselPrev" aria-label="Anterior">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+
+            <div class="carousel-track-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide"><img src="img/PROVA%201.webp" alt="Prova social 1" loading="lazy" /></div>
+                    <div class="carousel-slide"><img src="img/PROVA%202.webp" alt="Prova social 2" loading="lazy" /></div>
+                    <div class="carousel-slide"><img src="img/PROVA%203.webp" alt="Prova social 3" loading="lazy" /></div>
+                    <div class="carousel-slide"><img src="img/PROVA%204.webp" alt="Prova social 4" loading="lazy" /></div>
+                    <div class="carousel-slide"><img src="img/PROVA%205.webp" alt="Prova social 5" loading="lazy" /></div>
+                    <div class="carousel-slide"><img src="img/PROVA%206.webp" alt="Prova social 6" loading="lazy" /></div>
+                    <div class="carousel-slide"><img src="img/PROVA%207.webp" alt="Prova social 7" loading="lazy" /></div>
+                </div>
+            </div>
+
+            <button class="carousel-arrow carousel-arrow--right" id="carouselNext" aria-label="Próximo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots"></div>
+    </section>
+
+    <!-- ===== LIGHTBOX MODAL ===== -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">&times;</button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="Prova social ampliada" />
+    </div>
+
+    <!-- ===== FINAL CTA SECTION ===== -->
+    <section class="final-cta" id="cta">
+        <div class="cta-glow"></div>
+        <div class="final-cta-inner">
+            <h2 class="final-cta-title">
+                O primeiro passo para a transformação será dado agora.
+            </h2>
+            <p class="final-cta-sub">
+                Esse é o ponto de virada. A partir daqui, você abandona o amadorismo e entra no jogo real do Youtube.
+            </p>
+
+            <div class="final-cta-price">
+                <span class="price-from">De <s>R$ 195,80</s></span>
+                <span class="price-to">Por apenas</span>
+                <span class="price-value"><strong>R$ 97,90</strong></span>
+                <span class="price-cash">à vista</span>
+            </div>
+
+            <a href="https://pay.kiwify.com.br/d0blu0o" class="cta-btn cta-btn--large checkout-link" id="cta-final">
+        <span>QUERO COMEÇAR AGORA</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </a>
+
+            <div class="guarantee">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="#ffffff">
+          <path
+            d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+        </svg>
+                <span>Garantia de 7 dias. Seu dinheiro de volta se não gostar.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p>© 2026 — Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // ===== Source Tracking & Analytics =====
+        (function initTracking() {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Repassar SRC aos botões (para manter o rastreamento nativo Kiwify/Hotmart)
+            document.querySelectorAll('.checkout-link').forEach(link => {
+                if (urlParams.get('src')) {
+                    const url = new URL(link.href);
+                    url.searchParams.set('src', urlParams.get('src'));
+                    link.href = url.toString();
+                }
+
+                // Reportar Click no Pixel (InitiateCheckout)
+                link.addEventListener('click', () => {
+                    if (typeof fbq !== 'undefined') {
+                        fbq('track', 'InitiateCheckout');
+                    }
+                });
+            });
+        })();
+
+        // ===== Smooth Scroll =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // ===== Floating Particles =====
+        (function createParticles() {
+            const container = document.getElementById('particles');
+            const count = window.innerWidth <= 768 ? 8 : 30; // Reduce load on mobile
+            for (let i = 0; i < count; i++) {
+                const p = document.createElement('div');
+                p.classList.add('particle');
+                p.style.left = Math.random() * 100 + '%';
+                p.style.top = Math.random() * 100 + '%';
+                p.style.width = p.style.height = (Math.random() * 4 + 2) + 'px';
+                p.style.animationDuration = (Math.random() * 8 + 4) + 's';
+                p.style.animationDelay = (Math.random() * 5) + 's';
+                p.style.opacity = Math.random() * 0.3 + 0.1;
+                container.appendChild(p);
+            }
+        })();
+
+        // ===== Scroll Reveal Animation =====
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.benefits-card, .pillar-card, .proof-carousel, .final-cta-inner, .hero-content, .hero-visual, .hero-video-block').forEach(el => {
+            el.classList.add('reveal-on-scroll');
+            observer.observe(el);
+        });
+
+        // ===== CTA Button Pulse =====
+        const ctaBtns = document.querySelectorAll('.cta-btn');
+        ctaBtns.forEach(btn => {
+            setInterval(() => {
+                btn.classList.add('pulse');
+                setTimeout(() => btn.classList.remove('pulse'), 600);
+            }, 3000);
+        });
+
+        // ===== Navbar scroll effect (subtle) =====
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const hero = document.getElementById('hero');
+            const scrolled = window.scrollY;
+            const heroHeight = hero.offsetHeight;
+
+            // Parallax effect on hero glows
+            const glowLeft = document.querySelector('.hero-glow--left');
+            const glowRight = document.querySelector('.hero-glow--right');
+            if (glowLeft && scrolled < heroHeight) {
+                glowLeft.style.transform = `translateY(${scrolled * 0.3}px)`;
+                glowRight.style.transform = `translateY(${scrolled * 0.2}px)`;
+            }
+            lastScroll = scrolled;
+        });
+
+        // ===== Proof Carousel =====
+        (function initCarousel() {
+            const track = document.getElementById('carouselTrack');
+            const slides = track.querySelectorAll('.carousel-slide');
+            const prevBtn = document.getElementById('carouselPrev');
+            const nextBtn = document.getElementById('carouselNext');
+            const dotsContainer = document.getElementById('carouselDots');
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+
+            // Create dots
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.classList.add('carousel-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.setAttribute('aria-label', 'Ir para prova ' + (i + 1));
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                updateDots();
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+            }
+
+            function updateDots() {
+                dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentIndex);
+                });
+            }
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                goToSlide(currentIndex);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                goToSlide(currentIndex);
+            });
+
+            // Touch/swipe support
+            let startX = 0;
+            let isDragging = false;
+            track.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                isDragging = true;
+            });
+            track.addEventListener('touchend', (e) => {
+                if (!isDragging) return;
+                const diff = startX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) {
+                        currentIndex = (currentIndex + 1) % totalSlides;
+                    } else {
+                        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                    }
+                    goToSlide(currentIndex);
+                }
+                isDragging = false;
+            });
+
+            // Initialize first slide
+            goToSlide(0);
+        })();
+
+        // ===== Lightbox =====
+        (function initLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            document.querySelectorAll('.carousel-slide img').forEach(img => {
+                img.style.cursor = 'zoom-in';
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeLightbox();
+            });
+        })();
+
+
+    </script>
+
+</body>
+
+</html>
