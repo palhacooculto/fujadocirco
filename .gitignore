@@ -2,3 +2,4 @@
 img/VSL.mp4
 RENDER FINAL*.png
 *.log
+__pycache__/

@@ -1,0 +1,49 @@
+name: Atualizar dados do YouTube
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - server.py
+      - update_youtube_stats.py
+      - .github/workflows/update-youtube-stats.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: youtube-stats
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v7
+
+      - name: Preparar o Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Consultar os dados públicos do YouTube
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: python update_youtube_stats.py
+
+      - name: Publicar os dados atualizados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add youtube-stats.json
+          if git diff --cached --quiet; then
+            echo "Os dados continuam iguais."
+          else
+            git commit -m "chore: atualiza dados públicos do YouTube"
+            git push
+          fi
