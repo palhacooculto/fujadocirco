@@ -2500,3 +2500,24 @@ a {
     -webkit-background-clip: text, padding-box;
     background-clip: text, padding-box;
 }
+
+/* v1.0.25: +R$6.000 por mês no mesmo degradê dos botões (#78F505 embaixo -> #DAF905 em cima) */
+.hl-money {
+    background: linear-gradient(to top, #78F505 0%, #A8F804 50%, #DAF905 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #A8F804;
+    text-shadow: none;
+    filter: drop-shadow(0 0 12px rgba(150, 247, 5, 0.3));
+}
+.hl-money::after {
+    background: linear-gradient(to right, #78F505, #A8F804, #DAF905);
+    box-shadow: 0 0 14px rgba(150, 247, 5, 0.75);
+}
+.hl-money.fim { animation: grana-pop 0.55s var(--mola), grana-brilho-lima 2.6s ease-in-out 0.6s infinite; }
+@keyframes grana-brilho-lima {
+    0%, 100% { filter: drop-shadow(0 0 10px rgba(150, 247, 5, 0.28)); }
+    50% { filter: drop-shadow(0 0 22px rgba(150, 247, 5, 0.65)); }
+}
+@media (prefers-reduced-motion: reduce) { .hl-money, .hl-money.fim { animation: none !important; } }
