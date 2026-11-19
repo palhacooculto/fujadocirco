@@ -12,12 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="preload" as="image" href="img/render-final.webp" />
-    <link rel="stylesheet" href="style.css?v=1.0.19" />
+    <link rel="stylesheet" href="style.css?v=1.0.24" />
 
     <!-- ===== Version Cleanup: limpa dados antigos do navegador ===== -->
     <script>
         (function() {
-            var SITE_VERSION = '1.0.19';
+            var SITE_VERSION = '1.0.24';
             if (localStorage.getItem('__site_version') !== SITE_VERSION) {
                 // Limpar localStorage (exceto a própria flag)
                 localStorage.clear();
@@ -67,9 +67,7 @@ src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
 
 <body>
     <!-- ===== ANNOUNCEMENT BAR ===== -->
-    <div class="announcement-bar">
-        NÃO SEJA O BOBO DA CORTE, FUJA DO CIRCO
-    </div>
+    <div class="scroll-bar" id="scrollBar" aria-hidden="true"></div>
 
     <!-- ===== Floating Particles ===== -->
     <div class="particles" id="particles"></div>
@@ -77,14 +75,12 @@ src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
 
     <!-- ===== HERO SECTION ===== -->
     <section class="hero" id="hero">
-        <div class="hero-glow hero-glow--left"></div>
         <div class="hero-glow hero-glow--right"></div>
 
         <div class="hero-inner">
             <div class="hero-content">
                 <h1 class="hero-headline">
-                    Aprenda TUDO que você precisa saber pra CRESCER um canal
-                    <span class="highlight-gold">NO YOUTUBE DO ZERO!</span>
+                    Aprenda TUDO que você precisa saber pra faturar <span class="hl-money"><span class="hl-num"><span class="hl-ghost" aria-hidden="true">+R$6.000</span><span class="hl-live" data-to="6000">+R$6.000</span></span> por mês</span> <span class="highlight-gold">NO YOUTUBE DO ZERO!</span>
                 </h1>
 
                 <p class="hero-subtext">
@@ -102,7 +98,7 @@ src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
                     </div>
                 </div>
 
-                <a href="#cta-final" class="cta-btn" id="cta-hero">
+                <a href="#cta-final" class="cta-btn cta-btn--hero" id="cta-hero">
           <span>QUERO COMEÇAR AGORA</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M8 5v14l11-7z" />
@@ -175,6 +171,14 @@ src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
                     </ul>
                 </div>
             </div>
+
+        <div class="topico-cta">
+            <a href="https://pay.kiwify.com.br/d0blu0o" class="cta-btn checkout-link" data-cta="beneficios">
+                <span>QUERO COMEÇAR AGORA</span>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+            </a>
+            <p class="topico-preco"><b>R$ 149,90</b> · acesso vitalício · garantia de 7 dias</p>
+        </div>
         </div>
     </section>
 
@@ -206,6 +210,14 @@ src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
         </div>
 
         <div class="carousel-dots" id="carouselDots"></div>
+
+        <div class="topico-cta">
+            <a href="https://pay.kiwify.com.br/d0blu0o" class="cta-btn checkout-link" data-cta="videos">
+                <span>QUERO COMEÇAR AGORA</span>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+            </a>
+            <p class="topico-preco"><b>R$ 149,90</b> · acesso vitalício · garantia de 7 dias</p>
+        </div>
     </section>
 
     <!-- ===== CHANNEL RESULTS SECTION ===== -->
@@ -226,11 +238,11 @@ src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
                         <div class="channel-card">
                             <a class="channel-profile" href="https://www.youtube.com/@ofabex" target="_blank" rel="noopener noreferrer" aria-label="Abrir canal Fabex no YouTube">
                                 <div class="channel-avatar-wrap"><img class="channel-avatar" src="https://yt3.googleusercontent.com/46UUE5eu3sKP-V9_Jycwg76FGkFsrOH9Aio4JRvyz_JC89Y-k9qGYbXWSotlqclnOivLJd2g7A=s900-c-k-c0x00ffffff-no-rj" alt="Ícone do canal Fabex" /><span class="channel-live-dot" aria-hidden="true"></span></div>
-                                <div class="channel-copy"><span class="channel-kicker">CANAL QUE EU JÁ TRABALHEI</span><h3 class="channel-name">Fabex <span class="channel-check" aria-label="Canal verificado"><svg viewBox="0 0 24 24"><path d="m6.5 12 3.3 3.3 7.7-7.7" /></svg></span></h3><p class="channel-subscribers">9,11 mil inscritos</p></div>
+                                <div class="channel-copy"><span class="channel-kicker">CANAL QUE EU JÁ TRABALHEI</span><h3 class="channel-name">Fabex <span class="channel-check" aria-label="Canal verificado"><svg viewBox="0 0 24 24"><path d="m6.5 12 3.3 3.3 7.7-7.7" /></svg></span></h3><p class="channel-subscribers">9,67 mil inscritos</p></div>
                                 <span class="channel-open" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 16 16 8M10 8h6v6" /></svg></span>
                             </a>
                             <div class="channel-video-block">
-                                <div class="channel-views"><span class="channel-views-label">VÍDEO EM DESTAQUE</span><strong class="channel-view-count">271 mil visualizações</strong></div>
+                                <div class="channel-views"><span class="channel-views-label">VÍDEO EM DESTAQUE</span><strong class="channel-view-count">385 mil visualizações</strong></div>
                                 <div class="channel-video"><iframe data-video-id="yWGRD-5bRKg" title="Vídeo em destaque do canal Fabex" loading="lazy" referrerpolicy="origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
                             </div>
                         </div>
@@ -240,11 +252,11 @@ src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
                         <div class="channel-card">
                             <a class="channel-profile" href="https://www.youtube.com/@kkpsyy" target="_blank" rel="noopener noreferrer" aria-label="Abrir canal kkpsycho no YouTube">
                                 <div class="channel-avatar-wrap"><img class="channel-avatar" src="https://yt3.googleusercontent.com/baEVKpJZcI8TY4lsNM6tVoNHZoQEnwv7zEhpeR-O8hOL2cElW817DtGhoyYvsVRALvzwujuM0Q=s900-c-k-c0x00ffffff-no-rj" alt="Ícone do canal kkpsycho" /><span class="channel-live-dot" aria-hidden="true"></span></div>
-                                <div class="channel-copy"><span class="channel-kicker">CANAL QUE EU JÁ TRABALHEI</span><h3 class="channel-name">kkpsycho <span class="channel-check" aria-label="Canal verificado"><svg viewBox="0 0 24 24"><path d="m6.5 12 3.3 3.3 7.7-7.7" /></svg></span></h3><p class="channel-subscribers">7,93 mil inscritos</p></div>
+                                <div class="channel-copy"><span class="channel-kicker">CANAL QUE EU JÁ TRABALHEI</span><h3 class="channel-name">kkpsycho <span class="channel-check" aria-label="Canal verificado"><svg viewBox="0 0 24 24"><path d="m6.5 12 3.3 3.3 7.7-7.7" /></svg></span></h3><p class="channel-subscribers">9,69 mil inscritos</p></div>
                                 <span class="channel-open" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 16 16 8M10 8h6v6" /></svg></span>
                             </a>
                             <div class="channel-video-block">
-                                <div class="channel-views"><span class="channel-views-label">VÍDEO EM DESTAQUE</span><strong class="channel-view-count">549 mil visualizações</strong></div>
+                                <div class="channel-views"><span class="channel-views-label">VÍDEO EM DESTAQUE</span><strong class="channel-view-count">569 mil visualizações</strong></div>
                                 <div class="channel-video"><iframe data-video-id="eWnEv-hed3g" title="Vídeo em destaque do canal kkpsycho" loading="lazy" referrerpolicy="origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
                             </div>
                         </div>
@@ -254,11 +266,11 @@ src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
                         <div class="channel-card">
                             <a class="channel-profile" href="https://www.youtube.com/@sukivmpie" target="_blank" rel="noopener noreferrer" aria-label="Abrir canal Suki no YouTube">
                                 <div class="channel-avatar-wrap"><img class="channel-avatar" src="https://yt3.googleusercontent.com/fKoP63tfua3zBn56k-kuF-JPtRWOsbrawl2HuHh1jEj3X-YcqMBgpXv-5tVvO5OxkfLohdn5=s900-c-k-c0x00ffffff-no-rj" alt="Ícone do canal Suki" /><span class="channel-live-dot" aria-hidden="true"></span></div>
-                                <div class="channel-copy"><span class="channel-kicker">CANAL QUE EU JÁ TRABALHEI</span><h3 class="channel-name">Suki <span class="channel-check" aria-label="Canal verificado"><svg viewBox="0 0 24 24"><path d="m6.5 12 3.3 3.3 7.7-7.7" /></svg></span></h3><p class="channel-subscribers">8,32 mil inscritos</p></div>
+                                <div class="channel-copy"><span class="channel-kicker">CANAL QUE EU JÁ TRABALHEI</span><h3 class="channel-name">Suki <span class="channel-check" aria-label="Canal verificado"><svg viewBox="0 0 24 24"><path d="m6.5 12 3.3 3.3 7.7-7.7" /></svg></span></h3><p class="channel-subscribers">16,4 mil inscritos</p></div>
                                 <span class="channel-open" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 16 16 8M10 8h6v6" /></svg></span>
                             </a>
                             <div class="channel-video-block">
-                                <div class="channel-views"><span class="channel-views-label">VÍDEO EM DESTAQUE</span><strong class="channel-view-count">187 mil visualizações</strong></div>
+                                <div class="channel-views"><span class="channel-views-label">VÍDEO EM DESTAQUE</span><strong class="channel-view-count">280 mil visualizações</strong></div>
                                 <div class="channel-video"><iframe data-video-id="3JzzWgvQwk8" title="Vídeo em destaque do canal Suki" loading="lazy" referrerpolicy="origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
                             </div>
                         </div>
@@ -268,11 +280,11 @@ src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
                         <div class="channel-card">
                             <a class="channel-profile" href="https://www.youtube.com/@EsqueletoIA" target="_blank" rel="noopener noreferrer" aria-label="Abrir canal Esqueleto IA no YouTube">
                                 <div class="channel-avatar-wrap"><img class="channel-avatar" src="https://yt3.googleusercontent.com/ayLzQdqxYYzVBuGwPyPfPrLB4UHmoXFkZnZlN_ib3y35RXa3LTLvBJDkd_-D_ImqQfszKvjlHg=s900-c-k-c0x00ffffff-no-rj" alt="Ícone do canal Esqueleto IA" /><span class="channel-live-dot" aria-hidden="true"></span></div>
-                                <div class="channel-copy"><span class="channel-kicker">CANAL QUE EU JÁ TRABALHEI</span><h3 class="channel-name">Esqueleto IA <span class="channel-check" aria-label="Canal verificado"><svg viewBox="0 0 24 24"><path d="m6.5 12 3.3 3.3 7.7-7.7" /></svg></span></h3><p class="channel-subscribers">18,5 mil inscritos</p></div>
+                                <div class="channel-copy"><span class="channel-kicker">CANAL QUE EU JÁ TRABALHEI</span><h3 class="channel-name">Esqueleto IA <span class="channel-check" aria-label="Canal verificado"><svg viewBox="0 0 24 24"><path d="m6.5 12 3.3 3.3 7.7-7.7" /></svg></span></h3><p class="channel-subscribers">18,6 mil inscritos</p></div>
                                 <span class="channel-open" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 16 16 8M10 8h6v6" /></svg></span>
                             </a>
                             <div class="channel-video-block">
-                                <div class="channel-views"><span class="channel-views-label">VÍDEO EM DESTAQUE</span><strong class="channel-view-count">328 mil visualizações</strong></div>
+                                <div class="channel-views"><span class="channel-views-label">VÍDEO EM DESTAQUE</span><strong class="channel-view-count">359 mil visualizações</strong></div>
                                 <div class="channel-video"><iframe data-video-id="I8PLa7tm2lM" title="Vídeo em destaque do canal Esqueleto IA" loading="lazy" referrerpolicy="origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
                             </div>
                         </div>
@@ -282,7 +294,7 @@ src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
                         <div class="channel-card">
                             <a class="channel-profile" href="https://www.youtube.com/@VecinaA" target="_blank" rel="noopener noreferrer" aria-label="Abrir canal VecinaA no YouTube">
                                 <div class="channel-avatar-wrap"><img class="channel-avatar" src="https://yt3.googleusercontent.com/CZxc8gMoUOSDCn2ItTF39vhFGIOJVEpeDvZU77ZfElYt2QLld3f8A1f6xA3t7WPsy5P9ePzA3ck=s900-c-k-c0x00ffffff-no-rj" alt="Ícone do canal VecinaA" /><span class="channel-live-dot" aria-hidden="true"></span></div>
-                                <div class="channel-copy"><span class="channel-kicker">CANAL QUE EU JÁ TRABALHEI</span><h3 class="channel-name">VecinaA <span class="channel-check" aria-label="Canal verificado"><svg viewBox="0 0 24 24"><path d="m6.5 12 3.3 3.3 7.7-7.7" /></svg></span></h3><p class="channel-subscribers">56,9 mil inscritos</p></div>
+                                <div class="channel-copy"><span class="channel-kicker">CANAL QUE EU JÁ TRABALHEI</span><h3 class="channel-name">VecinaA <span class="channel-check" aria-label="Canal verificado"><svg viewBox="0 0 24 24"><path d="m6.5 12 3.3 3.3 7.7-7.7" /></svg></span></h3><p class="channel-subscribers">57,5 mil inscritos</p></div>
                                 <span class="channel-open" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 16 16 8M10 8h6v6" /></svg></span>
                             </a>
                             <div class="channel-video-block">
@@ -299,6 +311,14 @@ src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
             </button>
         </div>
         <div class="channel-dots" id="channelDots" aria-label="Selecionar canal"></div>
+
+        <div class="topico-cta">
+            <a href="https://pay.kiwify.com.br/d0blu0o" class="cta-btn checkout-link" data-cta="canais">
+                <span>QUERO COMEÇAR AGORA</span>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+            </a>
+            <p class="topico-preco"><b>R$ 149,90</b> · acesso vitalício · garantia de 7 dias</p>
+        </div>
     </section>
 
     <!-- ===== LIGHTBOX MODAL ===== -->
@@ -317,7 +337,7 @@ src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
         <h2 class="pillars-title">
             Veja tudo que você vai aprender para criar um <span class="red-box">CANAL DE SUCESSO</span> no YOUTUBE
         </h2>
-        <p class="pillars-subtitle">Sem enrolação, <strong>+27 AULAS</strong> com tudo que realmente importa, vou te ensinar na prática o passo a passo, clique por clique do que você deve fazer pra conseguir resultados iguais aos meus.</p>
+        <p class="pillars-subtitle">Sem enrolação, <strong>+23 AULAS</strong> com tudo que realmente importa, vou te ensinar na prática o passo a passo, clique por clique do que você deve fazer pra conseguir resultados iguais aos meus.</p>
 
         <div class="modules-grid">
             <article class="course-module">
@@ -328,7 +348,7 @@ src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
                     </div>
                 </div>
                 <div class="module-content">
-                    <div class="module-content-head"><span>O que você vai aprender</span><strong>16 AULAS</strong></div>
+                    <div class="module-content-head"><span>O que você vai aprender</span><strong>15 AULAS</strong></div>
                     <ol class="module-lessons">
                         <li><span class="lesson-number">01</span><span>Youtube NUNCA FOI SORTE</span></li>
                         <li><span class="lesson-number">02</span><span>O Necessário pra Crescer QUALQUER CANAL</span></li>
@@ -343,9 +363,8 @@ src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
                         <li><span class="lesson-number">11</span><span>Estudei 100 Vídeos VIRAIS pra entender como viralizar no Youtube</span></li>
                         <li><span class="lesson-number">12</span><span>Modelando um canal gringo do ZERO</span></li>
                         <li><span class="lesson-number">13</span><span>Como escolher um Nome Perfeito pro seu Canal</span></li>
-                        <li><span class="lesson-number">14</span><span>Faça SEO igual um MESTRE</span></li>
-                        <li><span class="lesson-number">15</span><span>A &quot;Regra dos 52&quot; usada por Youtubers de Sucesso</span></li>
-                        <li><span class="lesson-number">16</span><span>O MAIOR ERRO dos Youtubers INICIANTES</span></li>
+                        <li><span class="lesson-number">14</span><span>A &quot;Regra dos 52&quot; usada por Youtubers de Sucesso</span></li>
+                        <li><span class="lesson-number">15</span><span>O MAIOR ERRO dos Youtubers INICIANTES</span></li>
                     </ol>
                 </div>
             </article>
@@ -358,23 +377,21 @@ src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
                     </div>
                 </div>
                 <div class="module-content">
-                    <div class="module-content-head"><span>O que você vai aprender</span><strong>11 AULAS</strong></div>
-                    <ol class="module-lessons" start="17">
-                        <li><span class="lesson-number">17</span><span>Como MINERAR NICHOS GRINGOS VIRAIS</span></li>
-                        <li><span class="lesson-number">18</span><span>Como ter IDEIAS INFINITAS de VÍDEOS</span></li>
-                        <li><span class="lesson-number">19</span><span>Prevendo um Vídeo Viral</span></li>
-                        <li><span class="lesson-number">20</span><span>Como Viralizar usando SEO</span></li>
-                        <li><span class="lesson-number">21</span><span>Como Viralizar com Vídeos Simples</span></li>
-                        <li><span class="lesson-number">22</span><span>Como se Organizar para Produzir Corretamente</span></li>
-                        <li><span class="lesson-number">23</span><span>Fazendo uma Thumbnail Perfeita do ZERO</span></li>
-                        <li><span class="lesson-number">24</span><span>Como ter Suporte OFICIAL e DIRETO com o Youtube</span></li>
-                        <li><span class="lesson-number">25</span><span>Como FECHAR MAIS PARCERIAS (e não cair em golpes)</span></li>
-                        <li><span class="lesson-number">26</span><span>Como criar roteiros MAGNÉTICOS</span></li>
-                        <li><span class="lesson-number">27</span><span>Escrevendo um Roteiro MAGNÉTICO do ZERO</span></li>
+                    <div class="module-content-head"><span>O que você vai aprender</span><strong>8 AULAS</strong></div>
+                    <ol class="module-lessons" start="16">
+                        <li><span class="lesson-number">16</span><span>Como ter IDEIAS INFINITAS de VÍDEOS</span></li>
+                        <li><span class="lesson-number">17</span><span>Prevendo um Vídeo Viral</span></li>
+                        <li><span class="lesson-number">18</span><span>Como Viralizar usando SEO</span></li>
+                        <li><span class="lesson-number">19</span><span>Como Viralizar com Vídeos Simples</span></li>
+                        <li><span class="lesson-number">20</span><span>Como se Organizar para Produzir Corretamente</span></li>
+                        <li><span class="lesson-number">21</span><span>Fazendo uma Thumbnail Perfeita do ZERO</span></li>
+                        <li><span class="lesson-number">22</span><span>Como criar roteiros MAGNÉTICOS</span></li>
+                        <li><span class="lesson-number">23</span><span>Escrevendo um Roteiro MAGNÉTICO do ZERO</span></li>
                     </ol>
                 </div>
             </article>
         </div>
+
     </section>
 
     <!-- ===== FINAL CTA SECTION ===== -->
@@ -388,7 +405,7 @@ src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
                 Esse é o ponto de virada. A partir daqui, você abandona o amadorismo e entra no jogo real do Youtube.
             </p>
             <div class="final-cta-price">
-                <span class="price-from">De <s>R$ 229,90</s></span>
+                <span class="price-from">De <s class="riscado">R$ 229,90</s></span>
                 <span class="price-to">POR APENAS</span>
                 <span class="price-value"><strong>R$ 149,90</strong></span>
                 <span class="price-cash">à vista - pagou uma vez, acesso vitalício ao curso e todas futuras atualizações.</span>
@@ -485,19 +502,50 @@ src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
             });
         }, observerOptions);
 
-        document.querySelectorAll('.benefits-card, .course-module, .proof-carousel, .final-cta-inner, .hero-content, .hero-visual, .hero-video-block').forEach(el => {
+        document.querySelectorAll('.benefits-card, .course-module, .proof-carousel, .final-cta-inner, .hero-content, .hero-visual, .hero-video-block, .proof-title, .channel-results-title, .pillars-title, .section-label, .channel-carousel, .topico-cta').forEach(el => {
             el.classList.add('reveal-on-scroll');
             observer.observe(el);
         });
 
-        // ===== CTA Button Pulse =====
-        const ctaBtns = document.querySelectorAll('.cta-btn');
-        ctaBtns.forEach(btn => {
-            setInterval(() => {
-                btn.classList.add('pulse');
-                setTimeout(() => btn.classList.remove('pulse'), 600);
-            }, 3000);
-        });
+        // ===== Dopamina: progresso, contagem do +R$6.000, cascatas =====
+        (function dopamina() {
+            const calmo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // barra de progresso da leitura
+            const bar = document.getElementById('scrollBar');
+            const prog = () => {
+                const h = document.documentElement.scrollHeight - innerHeight;
+                bar.style.transform = 'scaleX(' + (h > 0 ? scrollY / h : 0) + ')';
+            };
+            addEventListener('scroll', prog, { passive: true });
+            prog();
+
+            // contagem 0 -> 6.000 no cabeçalho
+            const live = document.querySelector('.hl-live');
+            if (live && !calmo) {
+                const alvo = +live.dataset.to, t0 = performance.now() + 350, dur = 1300;
+                const fmt = n => '+R$' + n.toLocaleString('pt-BR');
+                live.textContent = fmt(0);
+                const passo = t => {
+                    const p = Math.min(Math.max((t - t0) / dur, 0), 1);
+                    live.textContent = fmt(Math.round(alvo * (1 - Math.pow(1 - p, 3)) / 10) * 10);
+                    if (p < 1) requestAnimationFrame(passo);
+                    else live.closest('.hl-money').classList.add('fim');
+                };
+                requestAnimationFrame(passo);
+            } else if (live) {
+                live.closest('.hl-money').classList.add('fim');
+            }
+
+            // itens de lista entram em cascata
+            document.querySelectorAll('.module-lessons, .reference-list, .hero-trust').forEach(lista => {
+                lista.classList.add('stg');
+                [...lista.children].forEach((el, i) => el.style.setProperty('--i', i));
+            });
+
+            // partículas verdes no meio das brancas
+            document.querySelectorAll('.particle').forEach((p, i) => { if (i % 3 === 0) p.classList.add('particle--verde'); });
+        })();
 
         // ===== Navbar scroll effect (subtle) =====
         let lastScroll = 0;
@@ -509,8 +557,7 @@ src="https://www.facebook.com/tr?id=1626871931864884&ev=PageView&noscript=1"
             // Parallax effect on hero glows
             const glowLeft = document.querySelector('.hero-glow--left');
             const glowRight = document.querySelector('.hero-glow--right');
-            if (glowLeft && scrolled < heroHeight) {
-                glowLeft.style.transform = `translateY(${scrolled * 0.3}px)`;
+            if (glowRight && scrolled < heroHeight) {
                 glowRight.style.transform = `translateY(${scrolled * 0.2}px)`;
             }
             lastScroll = scrolled;

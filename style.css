@@ -1888,8 +1888,8 @@ a {
 }
 
 .price-value strong {
-    color: #b7ff2a;
-    text-shadow: 0 0 22px rgba(183, 255, 42, 0.22);
+    color: #39FF6A;
+    text-shadow: 0 0 22px rgba(57, 255, 106, 0.22);
 }
 
 .price-cash {
@@ -1908,8 +1908,8 @@ a {
 }
 
 .guarantee svg {
-    fill: #b7ff2a;
-    filter: drop-shadow(0 0 7px rgba(183, 255, 42, 0.3));
+    fill: #39FF6A;
+    filter: drop-shadow(0 0 7px rgba(57, 255, 106, 0.3));
 }
 
 /* ===== RESPONSIVE ===== */
@@ -2150,4 +2150,353 @@ a {
     .carousel-arrow:hover {
         transform: translateY(-50%) scale(1.05) !important;
     }
+}
+
+/* =====================================================================
+   DOPAMINA (v1.0.20): botões verdes do Genie, CTA no fim de cada tópico,
+   cabeçalho com contagem, faixa rolando, revelações com mola e cascatas
+   ===================================================================== */
+
+:root {
+    --verde: #39FF6A;
+    --verde-claro: #5CFF85;
+    --verde-tinta: #03200C;
+    --mola: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ---- barra de progresso da leitura ---- */
+.scroll-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    z-index: 200;
+    background: linear-gradient(90deg, #1fd655, var(--verde), #b6ffcb);
+    box-shadow: 0 0 12px rgba(57, 255, 106, 0.8);
+    transform: scaleX(0);
+    transform-origin: left center;
+    pointer-events: none;
+}
+
+/* ---- faixa do topo rolando ---- */
+.announcement-bar {
+    overflow: hidden;
+    padding: 12px 0;
+    white-space: nowrap;
+}
+.marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 26s linear infinite;
+}
+.marquee-grupo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.marquee-grupo span { padding: 0 22px; }
+.marquee-grupo i {
+    font-style: normal;
+    color: #0b8a32;
+    display: inline-block;
+    animation: estrela-gira 2.4s ease-in-out infinite;
+}
+@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes estrela-gira { 0%, 100% { transform: rotate(0) scale(1); } 50% { transform: rotate(180deg) scale(1.35); } }
+
+/* ---- cabeçalho: +R$6.000 por mês ---- */
+.hl-money {
+    position: relative;
+    display: inline-block;
+    color: var(--verde);
+    font-weight: 900;
+    text-shadow: 0 0 24px rgba(57, 255, 106, 0.35);
+    white-space: nowrap;
+}
+.hl-num { display: inline-grid; font-variant-numeric: tabular-nums; }
+.hl-num > span { grid-area: 1 / 1; text-align: right; }
+.hl-ghost { visibility: hidden; }
+.hl-money::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--verde);
+    box-shadow: 0 0 14px rgba(57, 255, 106, 0.8);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.6s var(--mola);
+}
+.hl-money.fim::after { transform: scaleX(1); }
+.hl-money.fim { animation: grana-pop 0.55s var(--mola), grana-brilho 2.6s ease-in-out 0.6s infinite; }
+@keyframes grana-pop { 0% { scale: 1; } 45% { scale: 1.12; } 100% { scale: 1; } }
+@keyframes grana-brilho {
+    0%, 100% { text-shadow: 0 0 18px rgba(57, 255, 106, 0.3); }
+    50% { text-shadow: 0 0 34px rgba(57, 255, 106, 0.75), 0 0 70px rgba(57, 255, 106, 0.25); }
+}
+.highlight-gold {
+    background: linear-gradient(100deg, #ffffff 0%, #ffffff 40%, #a9ffbf 50%, #ffffff 60%, #ffffff 100%);
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: brilho-texto 3.6s ease-in-out infinite;
+}
+@keyframes brilho-texto { 0% { background-position: 100% 0; } 60%, 100% { background-position: 0 0; } }
+
+/* ---- botões de compra: verdes, brilho pulsando, feixe e mola ---- */
+.cta-btn {
+    background: var(--verde);
+    color: var(--verde-tinta);
+    font-weight: 900;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    padding: 22px 48px;
+    border-radius: 14px;
+    gap: 12px;
+    isolation: isolate;
+    box-shadow: 0 0 0 1px rgba(57, 255, 106, 0.5), 0 0 26px rgba(57, 255, 106, 0.45);
+    animation: btn-verde 3.2s ease-in-out infinite, btn-mola 4.8s ease-in-out 1.4s infinite;
+    transition: transform 0.25s var(--mola), background-color 0.2s ease;
+}
+.cta-btn::before { display: none; }
+.cta-btn::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -20%;
+    bottom: -20%;
+    left: -60%;
+    width: 42%;
+    pointer-events: none;
+    transform: skewX(-22deg);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25) 30%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0.25) 70%, transparent);
+    animation: feixe 3.2s ease-in-out infinite;
+}
+.cta-btn > * { position: relative; z-index: 2; }
+.cta-btn svg { animation: seta-empurra 1.6s ease-in-out infinite; }
+.cta-btn:hover {
+    background: var(--verde-claro);
+    transform: translateY(-3px) scale(1.04);
+}
+.cta-btn:active { transform: translateY(0) scale(0.97); }
+.cta-btn.pulse { animation: btn-verde 3.2s ease-in-out infinite, btn-mola 4.8s ease-in-out 1.4s infinite; }
+.cta-btn--hero,
+.cta-btn--large {
+    font-size: 1.3rem;
+    padding: 24px 56px;
+}
+@keyframes btn-verde {
+    0%, 100% { box-shadow: 0 0 0 1px rgba(57, 255, 106, 0.5), 0 0 22px rgba(57, 255, 106, 0.35), 0 0 60px rgba(57, 255, 106, 0.12); }
+    50% { box-shadow: 0 0 0 1px rgba(120, 255, 150, 0.8), 0 0 36px rgba(57, 255, 106, 0.65), 0 0 90px rgba(57, 255, 106, 0.28); }
+}
+@keyframes feixe { 0%, 62% { left: -60%; } 88%, 100% { left: 125%; } }
+@keyframes btn-mola {
+    0%, 80%, 100% { scale: 1; }
+    84% { scale: 1.07 0.93; }
+    88% { scale: 0.95 1.05; }
+    92% { scale: 1.03 0.98; }
+    96% { scale: 0.99 1.01; }
+}
+@keyframes seta-empurra { 0%, 100% { translate: 0 0; } 50% { translate: 4px 0; } }
+
+/* ---- CTA no fim de cada tópico ---- */
+.topico-cta {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin: 52px auto 0;
+    text-align: center;
+}
+.topico-preco {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.72);
+}
+.topico-preco b { color: var(--verde); font-weight: 800; }
+.benefits .topico-preco { color: #555; }
+.benefits .topico-preco b { color: #0b8a32; }
+.benefits .cta-btn { animation: btn-verde-claro 3.2s ease-in-out infinite, btn-mola 4.8s ease-in-out 1.4s infinite; }
+@keyframes btn-verde-claro {
+    0%, 100% { box-shadow: 0 10px 26px rgba(10, 140, 50, 0.25), 0 0 0 1px rgba(10, 140, 50, 0.25); }
+    50% { box-shadow: 0 14px 40px rgba(10, 160, 60, 0.45), 0 0 0 1px rgba(10, 140, 50, 0.35); }
+}
+
+/* ---- revelar ao rolar com mola ---- */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(56px) scale(0.94);
+    transition: opacity 0.7s ease, transform 0.9s var(--mola);
+}
+.reveal-on-scroll.revealed { opacity: 1; transform: none; }
+
+/* ---- cascata nas listas ---- */
+.stg > * {
+    opacity: 0;
+    translate: -22px 0;
+    transition: opacity 0.45s ease calc(var(--i, 0) * 55ms + 0.2s), translate 0.6s var(--mola) calc(var(--i, 0) * 55ms + 0.2s), transform 0.2s, box-shadow 0.2s;
+}
+.revealed .stg > *,
+.stg.revealed > * { opacity: 1; translate: 0 0; }
+
+/* número da aula acende ao passar o mouse */
+.module-lessons li .lesson-number { transition: background-color 0.2s, color 0.2s, scale 0.3s var(--mola); }
+.module-lessons li:hover .lesson-number { background: var(--verde); color: var(--verde-tinta); scale: 1.15; }
+.module-content-head strong { display: inline-block; animation: selo-pula 2.8s ease-in-out infinite; }
+@keyframes selo-pula { 0%, 70%, 100% { scale: 1; } 80% { scale: 1.12; } 90% { scale: 0.97; } }
+
+/* ---- destaque dos títulos varre da esquerda ---- */
+.red-box,
+.monetization-badge {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position: left center;
+    transition: background-size 0.7s cubic-bezier(0.65, 0, 0.35, 1) 0.35s, color 0.3s ease 0.6s;
+}
+.red-box { background-color: transparent; background-image: linear-gradient(#fff, #fff); color: #fff; }
+.monetization-badge { background-color: transparent; background-image: linear-gradient(#000, #000); color: #000; }
+.revealed .red-box,
+.revealed .monetization-badge,
+.red-box.revealed { background-size: 100% 100%; }
+.revealed .red-box { color: #000; }
+.revealed .monetization-badge { color: #fff; }
+
+/* ---- imagens vivas ---- */
+.module-image { animation: ken-burns 9s ease-in-out infinite alternate; }
+.module-image--two { animation-delay: -4.5s; }
+@keyframes ken-burns { from { scale: 1; } to { scale: 1.08; } }
+.tablet-img { animation: flutua 5.5s ease-in-out infinite; }
+@keyframes flutua { 0%, 100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+.hero-glow--left { background: rgba(57, 255, 106, 0.09); animation: deriva 9s ease-in-out infinite alternate; }
+@keyframes deriva { to { translate: 120px 60px; } }
+
+/* ---- oferta final ---- */
+.riscado { position: relative; text-decoration: none; }
+.riscado::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    top: 52%;
+    height: 2px;
+    background: #ff4d4d;
+    transform: scaleX(0) rotate(-6deg);
+    transform-origin: left center;
+    transition: transform 0.5s ease 0.5s;
+}
+.revealed .riscado::after { transform: scaleX(1) rotate(-6deg); }
+.price-value strong { display: inline-block; animation: preco-pulso 2.4s ease-in-out infinite; }
+@keyframes preco-pulso {
+    0%, 100% { scale: 1; text-shadow: 0 0 18px rgba(57, 255, 106, 0.25); }
+    50% { scale: 1.07; text-shadow: 0 0 34px rgba(57, 255, 106, 0.7); }
+}
+.guarantee svg { animation: escudo 2.4s ease-in-out infinite; }
+@keyframes escudo { 0%, 100% { scale: 1; } 50% { scale: 1.15; } }
+.cta-glow {
+    background: radial-gradient(circle, rgba(57, 255, 106, 0.12) 0%, transparent 60%);
+    animation: respira 4s ease-in-out infinite;
+}
+@keyframes respira { 0%, 100% { opacity: 0.6; scale: 0.9; } 50% { opacity: 1; scale: 1.1; } }
+
+/* partículas verdes */
+.particle--verde { background: rgba(57, 255, 106, 0.55); box-shadow: 0 0 6px rgba(57, 255, 106, 0.8); }
+
+@media (max-width: 600px) {
+    .announcement-bar { padding: 9px 0; }
+    .cta-btn { font-size: 0.98rem; padding: 18px 26px; }
+    .cta-btn--hero,
+    .cta-btn--large { font-size: 1.05rem; padding: 20px 30px; }
+    .topico-cta { margin-top: 36px; padding: 0 4px; }
+    .topico-cta .cta-btn { width: 100%; max-width: 360px; justify-content: center; }
+    .topico-preco { font-size: 0.85rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee, .marquee-grupo i, .hl-money, .highlight-gold, .cta-btn, .cta-btn::after, .cta-btn svg,
+    .module-image, .tablet-img, .hero-glow--left, .price-value strong, .guarantee svg, .cta-glow,
+    .module-content-head strong, .benefits .cta-btn { animation: none !important; }
+    .reveal-on-scroll, .stg > * { opacity: 1; transform: none; translate: none; transition: none; }
+}
+
+/* v1.0.21: botões com o mesmo degradê verde dos textos do topo (verde do +R$6.000 + brilho menta do "NO YOUTUBE DO ZERO!") */
+.cta-btn {
+    background: linear-gradient(100deg, #39FF6A 0%, #39FF6A 35%, #a9ffbf 50%, #39FF6A 65%, #39FF6A 100%);
+    background-size: 250% 100%;
+    background-position: 100% 0;
+    animation: btn-verde 3.2s ease-in-out infinite, btn-mola 4.8s ease-in-out 1.4s infinite, brilho-texto 3.6s ease-in-out infinite;
+}
+.cta-btn:hover { background-color: transparent; filter: brightness(1.08); }
+.cta-btn::after { display: none; }
+.cta-btn.pulse { animation: btn-verde 3.2s ease-in-out infinite, btn-mola 4.8s ease-in-out 1.4s infinite, brilho-texto 3.6s ease-in-out infinite; }
+.benefits .cta-btn { animation: btn-verde-claro 3.2s ease-in-out infinite, btn-mola 4.8s ease-in-out 1.4s infinite, brilho-texto 3.6s ease-in-out infinite; }
+
+/* v1.0.22: degradê do print dele (conta-gotas): base verde #78F505 -> topo amarelo-esverdeado #DAF905 */
+.cta-btn {
+    background: linear-gradient(to top, #78F505 0%, #A8F804 50%, #DAF905 100%);
+    background-size: 100% 100%;
+    color: #0E2600;
+    animation: btn-lima 3.2s ease-in-out infinite, btn-mola 4.8s ease-in-out 1.4s infinite;
+}
+.cta-btn.pulse { animation: btn-lima 3.2s ease-in-out infinite, btn-mola 4.8s ease-in-out 1.4s infinite; }
+.cta-btn::after {
+    display: block;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0.2) 70%, transparent);
+}
+.benefits .cta-btn { animation: btn-lima-claro 3.2s ease-in-out infinite, btn-mola 4.8s ease-in-out 1.4s infinite; }
+@keyframes btn-lima {
+    0%, 100% { box-shadow: 0 0 0 1px rgba(168, 248, 4, 0.5), 0 0 22px rgba(150, 247, 5, 0.35), 0 0 60px rgba(150, 247, 5, 0.12); }
+    50% { box-shadow: 0 0 0 1px rgba(218, 249, 5, 0.8), 0 0 36px rgba(150, 247, 5, 0.6), 0 0 90px rgba(150, 247, 5, 0.25); }
+}
+@keyframes btn-lima-claro {
+    0%, 100% { box-shadow: 0 10px 26px rgba(90, 160, 0, 0.28), 0 0 0 1px rgba(90, 160, 0, 0.25); }
+    50% { box-shadow: 0 14px 40px rgba(90, 170, 0, 0.45), 0 0 0 1px rgba(90, 160, 0, 0.35); }
+}
+@media (prefers-reduced-motion: reduce) { .cta-btn, .cta-btn::after { animation: none !important; } }
+
+/* v1.0.23: hover mantém o degradê (antes ficava preto) e passa um feixe de luz */
+.cta-btn:hover {
+    background: linear-gradient(to top, #78F505 0%, #A8F804 50%, #DAF905 100%);
+    filter: none;
+}
+.cta-btn:hover::after {
+    width: 50%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45) 30%, #ffffff 50%, rgba(255, 255, 255, 0.45) 70%, transparent);
+    animation: feixe-hover 0.9s ease-in-out forwards;
+}
+@keyframes feixe-hover { from { left: -60%; } to { left: 125%; } }
+
+/* v1.0.24: preço R$ 149,90 no mesmo degradê dos botões (#78F505 embaixo -> #DAF905 em cima) */
+.topico-preco b,
+.benefits .topico-preco b,
+.price-value strong {
+    display: inline-block;
+    background: linear-gradient(to top, #78F505 0%, #A8F804 50%, #DAF905 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #A8F804;
+}
+.price-value strong { filter: drop-shadow(0 0 14px rgba(150, 247, 5, 0.35)); text-shadow: none; animation: preco-pulso-lima 2.4s ease-in-out infinite; }
+@keyframes preco-pulso-lima {
+    0%, 100% { scale: 1; filter: drop-shadow(0 0 10px rgba(150, 247, 5, 0.25)); }
+    50% { scale: 1.07; filter: drop-shadow(0 0 22px rgba(150, 247, 5, 0.6)); }
+}
+/* no fundo branco o lima some: mesmo degradê, com contorno escuro fino pra ler */
+.benefits .topico-preco b { filter: drop-shadow(0 0 0.6px #1f3a00) drop-shadow(0 0 0.6px #1f3a00); }
+@media (prefers-reduced-motion: reduce) { .price-value strong { animation: none; } }
+/* fundo branco: o preço vai num selinho escuro com o mesmo degradê (contorno ficou feio) */
+.benefits .topico-preco b {
+    filter: none;
+    padding: 3px 10px;
+    border-radius: 8px;
+    background: linear-gradient(to top, #78F505 0%, #A8F804 50%, #DAF905 100%), #0b0b0b;
+    -webkit-background-clip: text, padding-box;
+    background-clip: text, padding-box;
 }
