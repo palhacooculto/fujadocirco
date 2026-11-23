@@ -2521,3 +2521,16 @@ a {
     50% { filter: drop-shadow(0 0 22px rgba(150, 247, 5, 0.65)); }
 }
 @media (prefers-reduced-motion: reduce) { .hl-money, .hl-money.fim { animation: none !important; } }
+
+/* v1.0.26: barra de progresso e feixe do "NO YOUTUBE DO ZERO!" no degradê lima dos botões (#78F505 -> #A8F804 -> #DAF905) */
+.scroll-bar {
+    background: linear-gradient(90deg, #78F505 0%, #A8F804 50%, #DAF905 100%);
+    box-shadow: 0 0 12px rgba(150, 247, 5, 0.8);
+}
+.highlight-gold {
+    background: linear-gradient(100deg, #ffffff 0%, #ffffff 38%, #78F505 44%, #A8F804 50%, #DAF905 56%, #ffffff 62%, #ffffff 100%);
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
